@@ -28,6 +28,7 @@ class HomePage(TemplateView):
         context["posts"] = posts
         return context
 class AllPostsView(ListView):
+    http_method_names =["get"]
     model = Post
     template_name = "feed/all_posts.html"
     context_object_name = "posts"  # This matches with 'posts' in your template loop
